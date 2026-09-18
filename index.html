@@ -16,7 +16,13 @@
         services smarter, faster and easier.
     </p>
 
-    <h3>Our Services</h3>
+    <h3>AI Campus Assistant</h3>
+
+<input type="text" id="question" placeholder="Ask about the campus">
+
+<button onclick="showMessage()">Ask AI</button>
+
+<p id="message"></p>
 
     <ul>
         <h3>AI Campus Assistant</h3>
@@ -27,8 +33,27 @@
 
 <script>
 function showMessage() {
-    document.getElementById("message").innerHTML =
-        "Hello! I am your Smart Campus AI Assistant.";
+    let question = document.getElementById("question").value.toLowerCase();
+
+    let answer;
+
+    if (question.includes("library")) {
+        answer = "The campus library is open from 8 AM to 8 PM.";
+    }
+    else if (question.includes("canteen")) {
+        answer = "The campus canteen is available during college working hours.";
+    }
+    else if (question.includes("event")) {
+        answer = "You can check the latest campus events on the Events section.";
+    }
+    else if (question.includes("complaint")) {
+        answer = "You can submit your campus complaint through the Complaint Management service.";
+    }
+    else {
+        answer = "Sorry, I don't have information about that yet.";
+    }
+
+    document.getElementById("message").innerHTML = answer;
 }
 </script>
         <li>AI Campus Assistant</li>
